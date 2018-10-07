@@ -8,8 +8,8 @@ public class Parcoursile2 {
 	
 	public static void main(String[] args) {
 		Labyrinthe la = new Labyrinthe();
-		Queue<Cell> p = new LinkedList<>();
-		//MyPile p = new MyPile();
+		//Queue<Cell> p = new LinkedList<>();
+		MyFile p = new MyFile();
 		Cell depart = new Cell(0, 1);
 		p.offer(depart);
 		la.poserMarque(depart.x, depart.y);
