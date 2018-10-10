@@ -9,17 +9,15 @@ public class MyFile {
 	int nItems;
 	
 	public MyFile() {
-		tab=new Cell[8];
+		tab=new Cell[1000];
 		sommet =0;
 		queue= 0;
 		nItems=0;
 	}
 	
 	public Cell peek() {
-		if(!isEmpty()) {
-		return tab[sommet];
-		}
-		return null;
+		return tab[queue];
+		
 	}
 	
 	public boolean isEmpty() {
@@ -27,21 +25,15 @@ public class MyFile {
 	}
 	
 	public Cell poll() {
-		if(!isEmpty()) {
-        Cell temp = tab[sommet++];
-	    if (sommet == tab.length) {
-	      sommet = 0;
-	    }
-	    nItems--;
-	    return temp;}
+		
+        tab[queue++]=null;
+        nItems--;
 		return null;
 		
 	}
 	
 	public void offer(Cell c) {
-		if (queue == tab.length - 1)
-		      queue = -1;
-		    tab[++queue] = c;
+		    tab[sommet++] = c;
 		    nItems++;
 	}
 }
