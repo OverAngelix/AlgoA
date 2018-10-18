@@ -7,4 +7,5 @@ public interface BidirectionnalMap<K1, K2> {
 	public abstract boolean isEmpty();
 	public abstract void clear();
 	public abstract void removeFromPrimary(K1 k1);
+	public abstract String toString();
 }
