@@ -63,8 +63,7 @@ public class Adressage implements HashTable{
 		int h = key.hashCode();
 		h = Math.floorMod(h, hc.length);
 		int localidx=h;
-		boolean IsDelete=false;
-		while(!IsDelete) {
+		while(true) {
 		    if(hc[h]==null) {
 		    	return false;
 		    }else if(hc[h].getKey().equals(key)){
@@ -72,19 +71,18 @@ public class Adressage implements HashTable{
 				localidx=h;
 				h=Math.floorMod(h+1, hc.length);
 				while(hc[h]!=null) {
-				    if(Integer.valueOf(hc[h].getKey().hashCode()%hc.length)<=localidx) {
-					hc[localidx]=new HashCouple(hc[h].getKey(), hc[h].getValue());
+					
+					HashCouple hz = new HashCouple(hc[h].getKey(), hc[h].getValue());
 					hc[h]=null;
-					localidx=h;
-				    }
+					put(hz.getKey(), hz.getValue());
 				    h=Math.floorMod(h+1, hc.length);
+				    //POUR TOUTE LES VALEURS SUIVANTS ON REMOVE ET ADD
 				}
 				return true;
 		    }else {
 		    	h=Math.floorMod(h+1, hc.length);
 		    }
 		}
-		return true;
 	}
 
 	@Override

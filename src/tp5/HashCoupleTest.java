@@ -127,7 +127,9 @@ public class HashCoupleTest {
 		ad.put("chaot", 3);
 		ad.put("hg", 5);
 		ad.put("hffg", 454);
+		ad.toString();
 		assertTrue(ad.remove("chaot"));
+		ad.toString();
 		
 	}
 
