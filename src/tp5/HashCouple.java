@@ -3,25 +3,43 @@ package tp5;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.sun.org.apache.xpath.internal.operations.Equals;
+
 public class HashCouple implements Map.Entry<String,Integer> {
 	
-	HashMap<String,Integer> couple = new HashMap<>();
+	private String cle;
+	private Integer information;
+	
+	public HashCouple(String cle, Integer information) {
+		this.cle = cle;
+		this.information = information;
+	}
+
 	@Override
 	public String getKey() {
-		// TODO Auto-generated method stub
-		return null;
+		return cle;
 	}
 
 	@Override
 	public Integer getValue() {
-		// TODO Auto-generated method stub
-		return null;
+		return information;
 	}
 
 	@Override
 	public Integer setValue(Integer arg0) {
-		// TODO Auto-generated method stub
-		return null;
+		information=arg0;
+		return information;
+	}
+
+	@Override
+	public String toString() {
+		return "HashCouple [cle=" + cle + ", information=" + information + "]";
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		HashCouple h = (HashCouple) o;
+		return this.getKey()==h.getKey() && this.getValue()==h.getValue();
 	}
 
 }
