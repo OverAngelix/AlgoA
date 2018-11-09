@@ -1,5 +1,8 @@
 package tp7;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import java.util.Comparator;
 
 public class FilePrioriteTas<E> implements FilePriorite<E>{
@@ -117,6 +120,22 @@ public class FilePrioriteTas<E> implements FilePriorite<E>{
 	return disparu;
     }
 
+	public void toScreen() {
+		int sens =0; //sens = 0 => / et sens =1 => \
+		int multiplicater = 2;
+		int depth=0;
+		int nb=size()-1;
+		if(size()!=1) {
+		while(nb>0) {
+			depth++;
+			nb-=multiplicater;
+			multiplicater*=2;
+		}
+		System.out.println(depth);
+		}
+		
+	}
+	
 	@Override
 	public int size() {
 		int element =0;
@@ -133,6 +152,19 @@ public class FilePrioriteTas<E> implements FilePriorite<E>{
 		return tab[0]==null;
 	}
 	
+	
+	public static void main(String[] args) {
+		FilePrioriteTas<Integer> tas = new FilePrioriteTas<>(64);
+		tas.offer(33);
+		tas.offer(45);
+		tas.offer(7);
+		tas.offer(20);
+		tas.offer(10);
+		tas.offer(21);
+		tas.offer(11);
+		
+		tas.toScreen();
+	}
 
 }
 
