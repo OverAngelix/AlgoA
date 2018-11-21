@@ -132,6 +132,8 @@ public class FilePrioriteTas<E> implements FilePriorite<E>{
 			multiplicater*=2;
 		}
 		System.out.println(depth);
+		for(int i = (int) Math.pow((double)2, (double)depth));
+		
 		}
 		
 	}
@@ -160,9 +162,9 @@ public class FilePrioriteTas<E> implements FilePriorite<E>{
 		tas.offer(7);
 		tas.offer(20);
 		tas.offer(10);
-		tas.offer(21);
+		tas.offer(91);
 		tas.offer(11);
-		
+		System.out.println(tas.toString());
 		tas.toScreen();
 	}
 
